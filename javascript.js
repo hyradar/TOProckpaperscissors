@@ -18,11 +18,6 @@ function getComputerChoice() {
     return choice;
 }
 
-function fixUserInput(string) {
-    string = string.toLowerCase();
-    return string;
-}
-
 function playRound(computerChoice, playerChoice) {
     
     // ties
@@ -60,19 +55,41 @@ function playRound(computerChoice, playerChoice) {
 return "error";
 }
 
-function game() {
-    for (i = 0; i < 5; i++) {
-        let playerChoice = prompt("Choose your weapon: rock, paper, or scissors.");
-        let computerChoice;
-        
-        playerChoice = fixUserInput(playerChoice);
-        computerChoice = getComputerChoice();
-
-        let round = playRound(computerChoice, playerChoice);
-        console.log(round);
-    }
+function scissors() {
+    let playerChoice = "scissors";
+    computerChoice = getComputerChoice();
+    let results = playRound(computerChoice, playerChoice);
+    let output = document.getElementById('gameoutput'); 
+    output.textContent = results;
 }
 
+function rock() {
+    let playerChoice = rock;
+    computerChoice = getComputerChoice();
+    playRound(computerChoice, playerChoice);
+}
+
+function paper() {
+    let playerChoice = paper;
+    computerChoice = getComputerChoice();
+    playRound(computerChoice, playerChoice);
+}
+
+let b1 = document.getElementById('b1');
+
+b1.addEventListener("click", e => {scissors()});
+
+console.log("page ran");
 
 
-game();
+
+   // for (i = 0; i < 5; i++) {
+    //     let playerChoice = prompt("Choose your weapon: rock, paper, or scissors.");
+    //     let computerChoice;
+        
+    //     playerChoice = fixUserInput(playerChoice);
+    //     computerChoice = getComputerChoice();
+
+    //     let round = playRound(computerChoice, playerChoice);
+    //     console.log(round);
+    // }
