@@ -55,6 +55,24 @@ function playRound(computerChoice, playerChoice) {
 return "error";
 }
 
+
+
+function rock() {
+    let playerChoice = "rock";
+    computerChoice = getComputerChoice();
+    let results = playRound(computerChoice, playerChoice);
+    let output = document.getElementById('gameoutput'); 
+    output.textContent = results;
+}
+
+function paper() {
+    let playerChoice = "paper";
+    computerChoice = getComputerChoice();
+    let results = playRound(computerChoice, playerChoice);
+    let output = document.getElementById('gameoutput'); 
+    output.textContent = results;
+}
+
 function scissors() {
     let playerChoice = "scissors";
     computerChoice = getComputerChoice();
@@ -63,21 +81,13 @@ function scissors() {
     output.textContent = results;
 }
 
-function rock() {
-    let playerChoice = rock;
-    computerChoice = getComputerChoice();
-    playRound(computerChoice, playerChoice);
-}
-
-function paper() {
-    let playerChoice = paper;
-    computerChoice = getComputerChoice();
-    playRound(computerChoice, playerChoice);
-}
-
 let b1 = document.getElementById('b1');
+let b2 = document.getElementById('b2');
+let b3 = document.getElementById('b3');
 
-b1.addEventListener("click", e => {scissors()});
+b1.addEventListener("click", e => {rock()});
+b2.addEventListener("click", e => {paper()});
+b3.addEventListener("click", e => {scissors()});
 
 console.log("page ran");
 
